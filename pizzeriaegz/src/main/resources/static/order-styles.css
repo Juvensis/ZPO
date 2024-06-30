@@ -1,0 +1,113 @@
+/* Resetowanie podstawowych stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    <!--background-image: url('./images/background.jpg');-->
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #ffff00;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    border: 2px solid #3a55c7;
+    padding: 15px;
+    max-width: fit-content;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+select, input[type="text"], input[type="checkbox"], button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333333;
+}
+
+.select-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%23333"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.select-wrapper select::-ms-expand {
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 48%;
+    background-color: #e58231;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #543013;
+}
+
+.ingredients {
+    display: flex;
+
+}
+.ingredients > * {
+    flex: 1;
+    padding: 5px;
+}
+
+
+.ingredients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trzy kolumny */
+
+}
+.ingredients > * {
+    padding: 5px;
+}
+

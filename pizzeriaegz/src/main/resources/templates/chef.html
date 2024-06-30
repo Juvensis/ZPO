@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chef View</title>
+</head>
+<body>
+<h1>Current Orders</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID Pizzy</th>
+        <th>Rozmiar Pizzy</th>
+        <th>Godzina zamówienia</th>
+        <th>Składniki</th>
+        <th>Osoba zamawiająca</th>
+        <th>Usuń</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pizza : ${pizzas}">
+        <td th:text="${pizza.id}"></td>
+        <td th:text="${pizza.size}"></td>
+        <td th:text="${pizza.timestamp}"></td>
+        <td>
+            <ul>
+                <li th:each="ingredient : ${pizza.ingredients}">
+                    <span th:text="${ingredient.name}"></span>
+                </li>
+            </ul>
+        </td>
+        <td th:text="${pizza.customer}"></td>
+        <td>
+            <form th:action="@{/chef/{id}(id=${pizza.id})}" method="post">
+                <button type="submit">Usuń</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
